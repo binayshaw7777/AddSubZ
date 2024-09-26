@@ -42,7 +42,7 @@ android {
     }
     composeCompiler {
         reportsDestination = layout.buildDirectory.dir("compose_compiler")
-        stabilityConfigurationFile = rootProject.layout.projectDirectory.file("stability_config.conf")
+//        stabilityConfigurationFile = rootProject.layout.projectDirectory.file("stability_config.conf")
     }
 
     packaging.resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
