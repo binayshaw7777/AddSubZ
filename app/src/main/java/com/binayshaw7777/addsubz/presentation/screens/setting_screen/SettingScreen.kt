@@ -11,8 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
@@ -30,16 +28,15 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import com.binayshaw7777.addsubz.R
 import com.binayshaw7777.addsubz.presentation.components.ThemeDialog
-import com.binayshaw7777.addsubz.presentation.navigation.Screens
+import com.binayshaw7777.addsubz.presentation.navigation.LocalNavHost
 
 @Composable
 fun SettingScreen(
-    navHostController: NavHostController,
     modifier: Modifier = Modifier
 ) {
+    val navController = LocalNavHost.current
 
     var showThemeDialog by remember {
         mutableStateOf(false)

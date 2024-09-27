@@ -31,12 +31,15 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import com.binayshaw7777.addsubz.domain.model.MainScreenItems
+import com.binayshaw7777.addsubz.presentation.navigation.LocalNavHost
 import com.binayshaw7777.addsubz.presentation.navigation.Screens
 
 @Composable
-fun HomeScreen(navHostController: NavHostController, modifier: Modifier = Modifier) {
+fun HomeScreen(modifier: Modifier = Modifier) {
+
+    val navController = LocalNavHost.current
+
     val mainScreenItems by remember {
         mutableStateOf(MainScreenItems.entries)
     }
@@ -62,7 +65,7 @@ fun HomeScreen(navHostController: NavHostController, modifier: Modifier = Modifi
                 imageVector = Icons.Default.Settings,
                 contentDescription = null,
                 modifier = Modifier.clickable {
-                    navHostController.navigate(Screens.SettingScreen.name)
+                    navController.navigate(Screens.SettingScreen.name)
                 })
         }
         Spacer(
@@ -87,6 +90,12 @@ fun HomeScreen(navHostController: NavHostController, modifier: Modifier = Modifi
                         .fillMaxWidth()
                         .padding(vertical = 2.dp)
                         .clip(RoundedCornerShape(10.dp))
+                        .clickable {
+                            when (item) {
+                                MainScreenItems.SHOPPING_CALCULATOR -> navController.navigate(Screens.ShoppingCalculatorScreen.name)
+                                else -> {}
+                            }
+                        }
                 )
             }
         }

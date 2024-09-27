@@ -11,6 +11,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -18,6 +19,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.binayshaw7777.addsubz.presentation.screens.home_screen.HomeScreen
 import com.binayshaw7777.addsubz.presentation.screens.setting_screen.SettingScreen
+import com.binayshaw7777.addsubz.presentation.screens.shopping_calculator.ShoppingCalculator
 import com.binayshaw7777.addsubz.presentation.theme.FadeIn
 import com.binayshaw7777.addsubz.presentation.theme.FadeOut
 import com.binayshaw7777.addsubz.utils.compose_utils.BackPressCompose
@@ -54,10 +56,13 @@ fun Navigation(
             ) {
 
                 composable(route = Screens.HomeScreen.name) {
-                    HomeScreen(navController)
+                    HomeScreen()
                 }
                 composable(route = Screens.SettingScreen.name) {
-                    SettingScreen(navController)
+                    SettingScreen()
+                }
+                composable(route = Screens.ShoppingCalculatorScreen.name) {
+                    ShoppingCalculator(viewModel = hiltViewModel())
                 }
             }
         }
