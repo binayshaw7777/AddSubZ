@@ -77,6 +77,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.material3)
     implementation(libs.androidx.runtime.livedata)
+    implementation (libs.androidx.material.icons.extended)
 
     //ViewModel
     implementation (libs.androidx.lifecycle.viewmodel.ktx)

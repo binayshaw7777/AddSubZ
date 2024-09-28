@@ -26,8 +26,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.binayshaw7777.addsubz.BuildConfig
 import com.binayshaw7777.addsubz.R
 import com.binayshaw7777.addsubz.presentation.components.ThemeDialog
 import com.binayshaw7777.addsubz.presentation.navigation.LocalNavHost
@@ -55,7 +57,9 @@ fun SettingScreen(
     ) {
         Spacer(modifier = Modifier.height(32.dp))
         Row(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -78,5 +82,9 @@ fun SettingScreen(
                 )
             }
         }
+
+        Spacer(modifier = Modifier.weight(1f))
+
+        Text(text = "Version ${BuildConfig.VERSION_NAME}", modifier = Modifier.fillMaxWidth().padding(16.dp), style = TextStyle(textAlign = TextAlign.Center))
     }
 }
