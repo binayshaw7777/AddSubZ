@@ -1,4 +1,4 @@
-package com.binayshaw7777.addsubz.ui.theme
+package com.binayshaw7777.addsubz.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
